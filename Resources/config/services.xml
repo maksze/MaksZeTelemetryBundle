@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<container xmlns="http://symfony.com/schema/dic/services"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://symfony.com/schema/dic/services
+  https://symfony.com/schema/dic/services/services-1.0.xsd">
+  <services>
+
+    <service
+      id="maksze_telemetry.twig.extension.telemetry"
+      class="MaksZe\TelemetryBundle\Twig\Extension\TelemetryExtension"
+    >
+      <argument type="service" id="maksze_telemetry.config_service" />
+      <tag name="twig.extension" />
+    </service>
+
+    <service
+      id="maksze_telemetry.webmaster_controller"
+      class="MaksZe\TelemetryBundle\Controller\WebmasterController"
+      public="true"
+    />
+    
+    <service
+      id="maksze_telemetry.config_service"
+      class="MaksZe\TelemetryBundle\Service\ConfigService"
+    />
+  </services>
+</container>

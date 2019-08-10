@@ -1,0 +1,22 @@
+{% if app.environment != 'dev' %}
+  {% for item in config.yandexMetrika %}
+    {%
+      include '@MaksZeTelemetry/block/yandex_metrika.html.twig'
+      with {'config': item} only
+    %}
+  {% endfor %}
+  
+  {% for item in config.googleAnalytics %}
+    {%
+      include '@MaksZeTelemetry/block/google_site_tag.html.twig'
+      with {'config': item} only
+    %}
+  {% endfor %}
+
+  {% for item in config.facebookPixel %}
+    {%
+      include '@MaksZeTelemetry/block/facebook_pixel.html.twig'
+      with {'config': item} only
+    %}
+  {% endfor %}
+{% endif %}
