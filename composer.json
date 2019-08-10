@@ -1,5 +1,5 @@
 {
-  "name": "maksze/TelemetryBundle",
+  "name": "maksze/telemetry-bundle",
   "description": "Provides the ability to connect various telemetry systems such as google analytics, yandex metrika",
   "type": "symfony-bundle",
   "license": "MIT",
@@ -19,12 +19,12 @@
   },
   "autoload": {
     "psr-4": {
-      "MaksZe\TelemetryBundle\": "/"
+      "MaksZe\\TelemetryBundle\\": "/"
     }
   },
   "autoload-dev": {
     "psr-4": {
-      "MaksZe\TelemetryBundle\\Tests\": "tests/"
+      "MaksZe\\TelemetryBundle\\Tests\\": "tests/"
     }
   }
 }
