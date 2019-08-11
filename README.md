@@ -8,7 +8,7 @@ composer require maksze/telemetry-bundle
 
 ## Configuration
 
-To make this bundle work you need to add the following to your packages/maksze_telemetry.yaml:
+To make this bundle work you need to add the following to your app/config/packages/maksze_telemetry.yaml:
 
 ```yaml
 # app/config/packages/maksze_telemetry.yaml
@@ -24,4 +24,20 @@ maksze_telemetry:
     - {id: any_id}
   facebook_pixel:
     - {id: any_id}
+```
+
+Add app/config/routes/maksze_telemetry.yaml
+
+```yaml
+# app/config/routes/maksze_telemetry.yaml
+
+_maksze_telemetry:
+  resource: '@MaksZeTelemetryBundle/Resources/config/routes.xml'
+  prefix: /
+```
+
+Add to the main template before the closing body tag
+
+```
+{{ maksze_telemetry_render() }}
 ```
