@@ -1,3 +1,12 @@
+# Motivation
+You can simply connect the file with the metric code in prod mode. Roughly so:
+```twig
+{% if not debug %}
+  {% include 'telemetry.twig' %}
+{% endif %}
+```
+but with bundle, it's much more fun)
+
 ## Installation
 
 Open a command console, enter your project directory and execute the following command to download the latest version of this bundle:
