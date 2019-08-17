@@ -2,8 +2,8 @@ language: php
 sudo: false
 
 cache:
-    directories:
-        - $HOME/.composer/cache/files
+directories:
+- $HOME/.composer/cache/files
 
 matrix:
     fast_finish: true
@@ -12,9 +12,10 @@ matrix:
           env: SKELETON_VERSION="^4.0"
 
 before_install:
-    - if [[ $COVERAGE != true ]]; then phpenv config-rm xdebug.ini || true; fi
-    - if ! [ -z "$STABILITY" ]; then composer config minimum-stability ${STABILITY}; fi;
-    - if ! [ -v "$DEPENDENCIES" ]; then composer require --no-update ${DEPENDENCIES}; fi;
+    - phpenv config-rm xdebug.ini || true
+    - export SYMFONY_ENDPOINT=https://flex.symfony.com/r/github.com/symfony/recipes-contrib/${TRAVIS_PULL_REQUEST}
+    - export PACKAGES=$(curl -s $SYMFONY_ENDPOINT | sed -En 's/.*composer req "([^"]+)".*/\1/p')
+    - echo "$PACKAGES"
 
 install:
     - composer create-project "symfony/skeleton:${SKELETON_VERSION}" flex
@@ -22,4 +23,4 @@ install:
     - composer config extra.symfony.allow-contrib true
 
 script:
-    - composer validate --strict --no-check-lock
+    - composer req --ignore-platform-reqs $(echo $PACKAGES)
