@@ -1,4 +1,9 @@
-# Motivation
+# MaksZeTelemetryBundle
+Provides the ability to connect various telemetry systems such as google analytics, yandex metrika, ect
+
+[![Build Status](https://travis-ci.org/maksze/MaksZeTelemetryBundle.svg?branch=master)](https://travis-ci.org/maksze/MaksZeTelemetryBundle)
+
+## Motivation
 You can simply connect the file with the metric code in prod mode. Roughly so:
 ```twig
 {% if not debug %}
