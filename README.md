@@ -2,6 +2,8 @@
 Provides the ability to connect various telemetry systems such as google analytics, yandex metrika, ect
 
 [![Build Status](https://travis-ci.org/maksze/MaksZeTelemetryBundle.svg?branch=master)](https://travis-ci.org/maksze/MaksZeTelemetryBundle)
+[![Latest Stable Version](https://poser.pugx.org/maksze/telemetry-bundle/v/stable)](https://packagist.org/packages/maksze/telemetry-bundle)
+[![Total Downloads](https://poser.pugx.org/maksze/telemetry-bundle/downloads)](https://packagist.org/packages/maksze/telemetry-bundle)
 
 ## Motivation
 You can simply connect the file with the metric code in prod mode. Roughly so:
